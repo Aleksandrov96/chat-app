@@ -1,0 +1,122 @@
+@use '../../../scss/variables.scss' as v;
+
+.userChat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 3.5rem;
+  cursor: pointer;
+
+  &.active {
+    background-color: v.$color-secondary;
+
+    .messageInfo {
+      &__count {
+        background-color: v.$background;
+        color: v.$text-secondary;
+      }
+    }
+
+    &.dark {
+      background-color: v.$color-primary;
+    }
+  }
+
+  .userInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  
+    &__avatar {
+      border-radius: 50%;
+      width: 3rem;
+      object-fit: cover;
+      box-shadow: v.$box-shadow;
+
+      &.dark {
+        background: v.$color-secondary;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      max-width: 400px;
+      gap: .5rem;
+
+      @media screen and (max-width: 900px) {
+        max-width: 150px; 
+      }
+
+      &-latestMessage {
+        color: v.$text-secondary;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+
+        &.dark {
+          color: #fff;
+        }
+      }
+
+      &-name {
+        &.dark {
+          color: #fff;
+        }
+      }
+    }
+
+    &__name {
+      &.dark {
+        color: #fff;
+      }
+    }
+  }
+
+  .messageInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+    &__time {
+      display: flex;
+      color: v.$text-secondary;
+
+      &.dark {
+        color: v.$dark-text-secondary;
+      }
+    }
+    
+    &__count {
+      background-color: v.$color-primary;
+      color: #fff;
+      padding: .4rem;
+      border-radius: 25px;
+    }
+  }
+
+  &:hover {
+    background-color: v.$color-secondary;
+    
+    .messageInfo {
+      &__count {
+        background-color: v.$background;
+        color: v.$text-secondary;
+      }
+    }
+
+    &.dark {
+      background-color: v.$color-primary;
+    }
+  }
+
+  &:active {
+    background-color: v.$color-primary;
+  }
+}

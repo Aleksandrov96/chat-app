@@ -1,0 +1,24 @@
+@use '../../../scss/variables.scss' as v;
+
+.langSwitcher {
+  background-color: inherit;
+  border: none;
+  padding: .1rem;
+  border-radius: .3rem;
+  font-size: 1.2rem;
+  outline: none;
+  color: v.$color-primary;
+  cursor: pointer;
+
+  &__option {
+    background: v.$background;
+
+    &.dark {
+      background: v.$dark-background;
+    }
+  }
+
+  &.dark {
+    background-color: v.$dark-background;
+  }
+}

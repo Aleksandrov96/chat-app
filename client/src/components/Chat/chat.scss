@@ -1,0 +1,64 @@
+@use '../../scss/variables.scss' as v;
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  box-shadow: v.$box-shadow;
+  clip-path: inset(0px -15px 0px 0px);
+
+  &.dark {
+    background-color: v.$dark-secondary-background;
+    clip-path: inset(0px -15px 0px -15px);
+  }
+
+  .chatInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+    height: auto;
+    box-shadow: v.$box-shadow;
+    clip-path: inset(0px 0px -15px 0px);
+
+    &.dark {
+      background-color: v.$dark-background;
+      box-shadow: v.$dark-box-shadow;
+    }
+
+    &__name {
+      &.dark {
+        color: #fff;
+      }
+    }
+
+    .wrapper {
+      height: 3rem;
+      flex-direction: column;
+    }
+
+    .typing {
+      padding-top: 1rem;
+      color: v.$text-secondary;
+      font-size: 16px;
+    }
+
+    .showInfo {
+      color: v.$color-primary;
+      cursor: pointer;
+      transition: .3s all;
+      font-size: 1.2rem;
+      border: none;
+      background-color: #fff;
+  
+      &:active {
+        transform: translateY(2px);
+      }
+
+      &.dark {
+        background-color: v.$dark-background;
+      }
+    }
+  }
+}

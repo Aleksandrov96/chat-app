@@ -1,0 +1,124 @@
+@use '../../../scss/variables.scss' as v;
+
+.inputField {
+  .messageForm {
+    height: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__textarea {
+      width: 90%;
+      height: 2.5rem;
+      padding: .2rem;
+      font-size: 16px;
+      text-align: left;
+      border: none;
+      outline: none;
+      resize: none;
+
+      &.dark {
+        background: v.$dark-secondary-background;
+        color: #fff;
+
+        &::-webkit-scrollbar-track {
+          background: v.$dark-background;
+        }
+      }
+
+      @media screen and (max-width: 1300px) {
+        width: 80%;
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+       
+      &::-webkit-scrollbar-thumb {
+        background: v.$color-primary; 
+        border-radius: 2px;
+      }
+      
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+    }
+
+    &__icons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+      &-icon {
+        color: v.$color-primary;
+        cursor: pointer;
+        transition: .3s all;
+        font-size: 1.4rem;
+        border: none;
+        background-color: inherit;
+
+        &:active {
+          transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+        }
+      }
+    }
+  }
+}
+
+.files__preview {
+  position: absolute;
+  display: flex;
+  bottom: 4rem;
+  width: 65%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .5rem;
+
+  .item {
+    position: relative;
+    height: auto;
+
+    &-delete {
+      text-align: center;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      padding: 6px;
+      background-color: v.$color-secondary;
+      font-size: 1rem;
+      color: #ffff;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: v.$color-primary;
+      }
+
+      &:active {
+        transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+      }
+
+      &.dark {
+        background-color: v.$color-primary;
+        
+        &:hover {
+          background-color:  v.$color-secondary;
+        }
+      }
+    }
+  }
+}
+
+.emojiPicker {
+  position: absolute;
+  bottom: 5rem;
+  right: 6.7rem;
+}

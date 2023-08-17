@@ -1,0 +1,9 @@
+.attachedVideo {
+  max-width: 30rem;
+  height: auto;
+
+  @media screen and (max-width: 1300px) {
+    max-width: 20rem;
+    height: auto;
+  }
+}

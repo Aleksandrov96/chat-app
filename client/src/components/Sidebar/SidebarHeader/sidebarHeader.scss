@@ -1,0 +1,82 @@
+@use '../../../scss/variables.scss' as v;
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  padding: 1rem;
+  gap: 1rem;
+  justify-content: space-between;
+  box-shadow: v.$box-shadow;
+  clip-path: inset(0px 0px -15px 0px);
+  
+  &.dark {
+    box-shadow: v.$dark-box-shadow;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 3rem;
+    background-color: v.$background;
+    gap: 1rem;
+
+    &__avatar {
+      border-radius: 50%;
+      width: 3rem;
+      object-fit: cover;
+
+      &.dark {
+        background: v.$color-secondary;
+      }
+    }  
+
+    &.dark {
+      background-color: v.$background;
+    }
+
+    &__name {
+      &.dark {
+        color: #fff;
+      }
+
+      @media screen and (max-width: 1300px) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 150px;
+      }
+    }
+
+    @media screen and (max-width: 1300px) {
+      display: flex;
+      align-self: flex-start;
+    }
+
+    &.dark {
+      background-color: v.$dark-background;
+    }
+  }
+
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .signOut {
+      color: v.$color-primary;
+      cursor: pointer;
+      transition: .3s all;
+      font-size: 1.2rem;
+      border: none;
+      background-color: inherit;
+  
+      &:active {
+        transform: translateY(2px);
+      }
+    }
+  }
+}

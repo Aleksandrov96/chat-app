@@ -1,0 +1,62 @@
+@use '../../../../scss/variables.scss' as v;
+
+.scrollToBottom {
+  background-color: v.$color-secondary;
+  right: 40px;
+  bottom: 100px;
+  position: fixed;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 7px;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 9px 25px 0 rgba(132, 128, 177, 0.28);
+  border: none;
+  text-align: center;
+  transition: .2s all;
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    color: #ffff;
+  }
+
+  &:hover {
+    background-color: v.$color-primary;
+  }
+
+  &:active {
+    transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+  }
+
+
+  &.dark {
+    background-color: v.$color-primary;
+
+    &:hover {
+      background-color: v.$color-secondary;
+    }
+  }
+}
+.count {
+  position: absolute;
+  top: -1rem;
+  top: -10%;
+  left: -10%;
+  transform: translate(-20%, -20%);
+  margin: 0 auto;
+  background-color: v.$color-primary;
+  border-radius: 25%;
+  padding: 5px;
+  color: #fff;
+  box-shadow: v.$box-shadow;  
+
+  &.dark {
+    background-color: #fff;
+    color: v.$text-secondary;
+  }
+}
